@@ -1,0 +1,156 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+:root {
+    font-size: var(--font-size);
+    --font-family-paytome: 'Paytone One', sans-serif;
+    --font-size: 10px;
+    --size-grid: clamp(15rem, 13rem + 30vw, 70rem);
+    --title: clamp(3.5rem, 1.5rem + 2.2vw, 7rem);
+    --font-buttom: clamp(1.6rem, 1.4rem + 2.2vw, 3.5rem);
+}
+
+html {
+    font-size: var(--font-size);
+}
+
+header {
+    width: var(--size-grid);
+}
+
+h1 {
+    font-size: var(--title);
+    font-family: var(--font-family-paytome);
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    padding: 1.5rem;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #cdd86f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: background-color .3s linear;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+.grid-container {
+    width: var(--size-grid);
+    height: var(--size-grid);
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    overflow: hidden;
+    background-color: #0001;
+}
+
+
+.grid-item {
+    border: 2px solid #000;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.option {
+    width: 100%;
+    height: 100%;
+}
+
+/* //////////////////////////////////////////////// */
+/* ////////////////////BUTTOMS//////////////// */
+/* //////////////////////////////////////////////// */
+
+.buttom {
+    padding: clamp(0.5rem, 0.4rem + 1vw, 2rem);
+    font-size: var(--font-buttom);
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .2s ease-in-out .3s;
+    outline: none;
+    border: 2px solid #000;
+}
+
+.buttom::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+}
+
+.buttom::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+    transition-delay: .1s;
+}
+
+.buttom span {
+    position: relative;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.buttom:hover::after,
+.buttom:hover::before {
+    transform: translateX(0);
+}
+
+.buttom:hover {
+    box-shadow: 0 0 clamp(1.6rem, 1.8rem + 4vw,5rem) #fff;
+}
+
+.btn-in-game-container {
+    display: grid;
+    width: var(--size-grid);
+    grid-template-columns: repeat(auto-fit,minmax(14em,1fr));
+    gap: clamp(1rem,.8rem + 2vw,3rem);
+}
+
+.buttoms-container {
+    display: grid;
+    width: var(--size-grid);
+    grid-template-columns: repeat(auto-fit,minmax(20em,1fr));
+    gap: clamp(1rem,.8rem + 2vw,3rem);
+}
+
+
